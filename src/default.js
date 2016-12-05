@@ -139,8 +139,12 @@ module.exports = function DefaultNodeTokens(tokenConfig, config) {
     /**
      * Sets provided tokenReponse locally.
      *
+     * The token response is expected to have at least these fields:
+     *   - access_token (string): The access token to use
+     *   - expires_in (number): The amount of seconds this token is valid
+     *
      * @param {String} tokenName Name of the token this reponse is for
-     * @param {objet} tokenResponse Response of tokeninfo or token endpoint
+     * @param {object} tokenResponse Response of tokeninfo or token endpoint
      */
     function setToken(tokenName, tokenResponse) {
         // if there is no local_expiry field, this is a new token
