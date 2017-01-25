@@ -5,7 +5,7 @@ module.exports = function LocalNodeTokens() {
     winston.info('%s Running in local mode.', PACKAGE_NAME);
 
     var tokenString = process.env.OAUTH_ACCESS_TOKENS;
-        tokens = tokenString
+    var tokens = tokenString
                     .split(',')
                     .map(token => token.split(':'))
                     .reduce((acc, t) => {
